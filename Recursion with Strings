@@ -1,0 +1,32 @@
+class Recursion2 {
+    
+   public static String replaceCharacter(String s, char a, char b){
+
+	if( s.length()== 0){
+		
+		return s;
+	}
+
+	String smallOutput = replaceCharacter(s.substring(1), a, b);
+	if(s.charAt(0)==a){
+	return b+smallOutput;
+	}else{
+
+		return s.charAt(0)+smallOutput;
+
+	}
+
+
+}
+    
+    public static void main(String[] args) {
+
+	String str = "abcxdxex";
+	System.out.println("Original String"+"\t"+str);
+	String receiver = replaceCharacter(str, 'x','y');
+	System.out.println("Replaced String"+"\t"+receiver);
+
+	
+        
+    }
+}
